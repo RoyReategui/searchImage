@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint ) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint) ){
+            @content;
+        }
+    }@else if type-of($breakpoint) == number 
+        and unit($breakpoint) == 'px' or unit($breakpoint) == 'rem'
+        or unit($breakpoint) == 'em' or unit($breakpoint) == '%'{
+        
+        @media screen and (min-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+
+@mixin sizeIcon($limit) {
+    @if type-of($limit ) == number and $limit > 0{
+        @for $i from 1 through $limit {
+            .h-#{$i}{
+                height: $i * 8px ;
+            }
+            .w-#{$i}{
+                width: $i * 8px ;
+            }
+        }
+    }
+}

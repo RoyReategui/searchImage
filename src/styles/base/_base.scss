@@ -1,0 +1,10 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as mx;
+
+html, body {
+    font-family: var(--font-app);
+    background-color: var(--grey-200);
+}
+
+@include mx.sizeIcon(8);
+

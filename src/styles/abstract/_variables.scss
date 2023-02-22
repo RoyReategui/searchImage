@@ -1,0 +1,72 @@
+@font-face {
+    font-family:'CascadiaCode' ;
+    src: url('./src/font/CascadiaCode.ttf');
+}
+@font-face {
+    font-family:'Marope' ;
+    src: url('./src/font/Manrope.ttf');
+}
+
+:root {
+    // fonts
+     --font-app:  Marope,Arial, Helvetica, sans-serif;
+    // Colors
+    --grey-100: #fbfdfe;
+    --grey-200: #f9fafb;
+    --grey-300: #ecf0f3;
+    --grey-400: #b7c1c8;
+    --grey-500: #8e9ba4;
+    --grey-600: #687782;
+    --grey-700: #273b49;
+    --grey-800: #28353e;
+    --grey-900: #192229;
+
+    --green-100: #def7f0;
+    --green-200: #a4ead4;
+    --green-300: #72dfbe;
+    --green-400: #44d5a7;
+    --green-500: #16ca91;
+    --green-600: #12a173;
+    --green-700: #0d7854;
+    --green-800: #063728;
+    --green-900: #052e21;
+
+    --red-100: #fbd5dc;
+    --red-200: #f6acb9;
+    --red-300: #f28799;
+    --red-400: #ed5e76;
+    --red-500: #e93553;
+    --red-600: #cf1736;
+    --red-700: #9c1128;
+    --red-800: #3c060f;
+    --red-900: #200308;
+
+    --yellow-100: #fff6e6;
+    --yellow-200: #ffeac7;
+    --yellow-300: #ffdb9e;
+    --yellow-400: #ffce7a;
+    --yellow-500: #ffba42;
+    --yellow-600: #e5a638;
+    --yellow-700: #b4822d;
+    --yellow-800: #3d2c0f;
+    --yellow-900: #332000;
+
+    --blue-100: #e2f1fd;
+    --blue-200: #a4d6f9;
+    --blue-300: #88c8f7;
+    --blue-400: #62b7f4;
+    --blue-500: #1192ee;
+    --blue-600: #0f80d2;
+    --blue-700: #0c6cb0;
+    --blue-800: #063251;
+    --blue-900: #162936;
+    --height-header: 85px;
+}
+
+$height-containInput: 2.8rem;
+$breakpoints :(
+    small: 480px,
+    medium: 760px,
+    large: 1024px,
+    xlarge: 1200px
+);
