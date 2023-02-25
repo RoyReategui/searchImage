@@ -1,4 +1,24 @@
 @use '../abstract/variables' as *;
-.app{
+@use '../abstract/mixins' as mix;
 
+.app{
+    width: 90vw;
+    margin: 0.5rem auto;
+
+    @include mix.mq(small) {
+        width: 90vw;
+        font-size: 1.2rem;
+    }
+    @include mix.mq(medium) {
+        width: 85vw;
+        font-size: 1.4rem;
+    }
+    @include mix.mq(large) {
+        width: 80vw;
+        font-size: 1.6rem;
+    }
+    @include mix.mq(xlarge) {
+        width: 75vw;
+        font-size: 1.8rem;
+    }
 }

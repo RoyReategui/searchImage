@@ -6,7 +6,6 @@
 }
 
 .btn{
-
     border: 0;
     padding: 0.5em .8em;
     background-color: var(--blue-600);
@@ -17,4 +16,29 @@
     &:hover{
         background-color: var(--blue-500);
     }
+}
+
+.alert__title {
+    color: var(--yellow-700);
+    text-shadow: 2px 2px 2px var(--yellow-400);
+}
+.alert__mg {
+    background-color: var(--yellow-100);
+    text-shadow: 1px 2px 2px var(--yellow-200);
+    color: var(--yellow-600);
+    padding: .5em 0;
+    border-radius: .2em;
+}
+
+.btn-success {
+    background-color: var(--yellow-200);
+    color: var(--yellow-600);
+    font-size: 1rem;
+    padding: 0.5em 1.25em;
+    font-weight: 600;
+    transition: background-color .2s, color .2s;
+}
+.btn-success:hover{
+    background-color:var(--yellow-500);
+    color: var(--yellow-100);
 }

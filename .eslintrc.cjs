@@ -22,7 +22,10 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
+    '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/quotes': 'off',
     indent: ['error', 2, { SwitchCase: 1 }],
-    quotes: ['warn', 'single']
+    quotes: ['warn', 'single', { allowTemplateLiterals: true }]
+    // quotes: "off"
   }
 }

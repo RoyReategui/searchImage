@@ -8,10 +8,10 @@
     display: flex;
     height: var( --height-header );
     justify-content: center;
-    margin: 0.5rem auto;
+    margin-bottom: calc($height-containInput * 1);
     position: relative;
-    width: 90vw;
-
+    width: 100%;
+    
     &::after {
         content: attr(title);
         align-items: center;
@@ -29,29 +29,13 @@
         top: 0;
         width: 100%;
     }
-
-    @include mix.mq(small) {
-        width: 90vw;
-        font-size: 1.2rem;
-    }
-    @include mix.mq(medium) {
-        width: 85vw;
-        font-size: 1.4rem;
-    }
-    @include mix.mq(large) {
-        width: 80vw;
-        font-size: 1.6rem;
-    }
-    @include mix.mq(xlarge) {
-        width: 75vw;
-        font-size: 1.8rem;
-    }
 }
+
 .header__form {
     align-items: center;
     background-color: white;
     border-radius: 5px;
-    bottom: ($height-containInput/2) * -1;
+    bottom: calc($height-containInput/2) * -1;
     box-shadow: 2px 2px 5px var(--blue-200);
     display: flex;
     height: $height-containInput;
