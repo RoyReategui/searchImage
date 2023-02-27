@@ -17,6 +17,14 @@
         background-color: var(--blue-500);
     }
 }
+.btn--secundary{
+    background-color: var(--grey-600);
+    color: var(--grey-200);
+    &:hover{
+        background-color: var(--grey-700);
+        cursor: auto;
+    }
+}
 
 .alert__title {
     color: var(--yellow-700);

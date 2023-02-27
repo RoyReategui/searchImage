@@ -9,7 +9,7 @@
 
 :root {
     // fonts
-     --font-app:  Marope,Arial, Helvetica, sans-serif;
+     --font-app:  Marope, Arial, Helvetica, sans-serif;
     // Colors
     --grey-100: #fbfdfe;
     --grey-200: #f9fafb;
@@ -70,3 +70,4 @@ $breakpoints :(
     large: 1024px,
     xlarge: 1200px
 );
+$widthApp: 90vw;
