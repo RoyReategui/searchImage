@@ -1,0 +1,18 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as mix;
+
+.divsearch {
+    font-size: inherit;
+    
+    @include mix.mq(small){
+        flex-basis: 50%;
+    }
+    @include mix.mq(medium){
+        flex-basis: 40%;
+    } 
+    @include mix.mq(large){
+        flex-basis: 30%;
+    } 
+   
+}
+

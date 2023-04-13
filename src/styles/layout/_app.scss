@@ -11,14 +11,17 @@
     }
     @include mix.mq(medium) {
         $widthApp: 85vw; 
+        width: $widthApp;
         font-size: 1.4rem;
     }
     @include mix.mq(large) {
         $widthApp:80vw;
+        width: $widthApp;
         font-size: 1.6rem;
     }
     @include mix.mq(xlarge) {
         $widthApp: 75vw;
+        width: $widthApp;
         font-size: 1.8rem;
     }
 }

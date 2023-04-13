@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/consistent-type-definitions': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/quotes': 'off',
     indent: ['error', 2, { SwitchCase: 1 }],
     quotes: ['warn', 'single', { allowTemplateLiterals: true }]

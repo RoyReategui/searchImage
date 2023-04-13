@@ -2,10 +2,11 @@ import { type ReactElement, useState } from 'react'
 import { useForm } from '../hooks/useForm'
 import 'sweetalert2/src/sweetalert2.scss'
 
-import { type paramSearch, type initialFormState, type IMock } from '../interfaces/interfaces'
+import { type paramSearch, type initialFormState, type IGifs, type ICardInfo } from '../interfaces'
 import { GifContext } from './GifContext'
-import { useList } from '../hooks/useList'
-import { checkString, showAlert, createMock, formatWords } from '../helpers'
+import { useList } from '../hooks'
+import { checkString, showAlert, formatWords } from '../helpers'
+import { getApiGif } from '../helpers/getGif'
 
 interface props {
   children: ReactElement | ReactElement[]
@@ -16,26 +17,27 @@ const initialState: initialFormState = {
 }
 
 export const GifProvider = ({ children }: props) => {
-  const [gifs, setGif] = useState<IMock[]>([])
+  const [gifs, setGif] = useState<IGifs[]>([])
   const [isLoading, setisLoading] = useState<boolean>(false)
+  // const { data, isLoading, getFetchGif } = useFetch()
 
   const { addBusqueda, busquedas } = useList()
   const { search, formState, onChange, reset } = useForm(initialState)
 
   const onSearch = (event: paramSearch) => {
     if (isLoading) return
-    let searchInList = search
+    let searchCopy = search
 
     if (typeof event !== 'string' &&
         event?.type === 'keydown' &&
         (event as React.KeyboardEvent<HTMLInputElement>).code !== 'Enter') {
       return
     } else if (typeof event === 'string') {
-      searchInList = event
+      searchCopy = event
     }
 
     if (typeof event !== 'string') {
-      const { ok, message } = checkString(searchInList, busquedas)
+      const { ok, message } = checkString(searchCopy, busquedas)
       if (!ok) {
         showAlert(message)
         reset(initialState)
@@ -44,10 +46,24 @@ export const GifProvider = ({ children }: props) => {
     }
 
     setisLoading(true)
-    createMock(searchInList).then(res => {
-      res.title = formatWords(res.title)
-      setGif([res, ...gifs])
-      if (typeof event !== 'string') addBusqueda(searchInList)
+
+    getApiGif(searchCopy).then(res => {
+      const listGif: ICardInfo[] | undefined = res?.map(ele => (
+        {
+          title: ele.title,
+          img_url: ele.images.fixed_height_small.url,
+          img_urlModal: ele.images.downsized_medium.url,
+          id: ele.id
+        }
+      ))
+      const newGif: IGifs = {
+        title: formatWords(searchCopy),
+        listGifs: listGif
+      }
+
+      setGif([newGif, ...gifs])
+
+      if (typeof event !== 'string') addBusqueda(searchCopy)
       reset(initialState)
       setisLoading(false)
     })

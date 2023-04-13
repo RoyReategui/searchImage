@@ -17,6 +17,19 @@
         background-color: var(--blue-500);
     }
 }
+.btn--link {
+    display: inline-block;
+    color: white;
+    border-radius: .3em;
+}
+.btn--view {
+    background-color: #00acc1;
+    color: #e0f7fa;
+    
+    &:hover {
+        background-color: #00bcd4;
+    }
+}
 .btn--secundary{
     background-color: var(--grey-600);
     color: var(--grey-200);

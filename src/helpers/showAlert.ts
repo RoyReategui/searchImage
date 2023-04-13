@@ -23,3 +23,14 @@ export const showAlert = (message: string) => {
     () => {}
   )
 }
+
+export const showImageAlert = ({ img, title }: { img: string, title: string }) => {
+  Swal.fire({
+    title,
+    imageUrl: img,
+    imageAlt: title
+  }).then(
+    () => {},
+    () => {}
+  )
+}

@@ -1,0 +1,66 @@
+@use '../abstract/variables' as *;
+@use '../abstract/mixins' as mix;
+
+.divGridItem {
+    margin-bottom: 10px;
+    
+    &:target > h2{
+        background-color: var(--blue-100);
+        color: var(--blue-700)
+    }
+}
+.divGridItem__title {
+    background-color: var(--bg-ligth);
+    color: var(--grey-800);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+    position: relative;
+
+    & .a-icon {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        color: --var(--blue-700);
+
+        @include mix.mq(small) {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+}
+.divGridItem__grid {
+    color: var(--grey-600);
+    line-height: 1.5rem;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) );
+}
+.cardGif {
+    background-color: #e8eaf6 ;
+    border-radius: 0.4em;
+    height: fit-content;
+}
+.cardGif__img {
+    border-radius: .4em .4em 0 0;
+}
+.cardGif__body {
+    padding: .9em .8em; 
+    background: linear-gradient(135deg,#e3f2fd  40%,#e8eaf6  60%);
+    border-radius: 0 0 .4em .4em;
+}
+.cardGif__title {
+    color: var(--blue-800);
+    font-size: .6rem;
+    font-weight: 500;
+}
+.cardGif__buttons{
+    display: flex;
+    gap: .4em;
+    justify-content: end;
+}

@@ -1,0 +1,16 @@
+@use '../abstract/mixins' as mix;
+
+.divGrid {
+    background-color: white;
+    padding: 1em;
+    border-radius: .5em;
+    @include mix.mq(small){
+        flex-basis: 50%;
+    }
+    @include mix.mq(medium){
+        flex-basis: 60%;
+    }
+    @include mix.mq(large){
+        flex-basis: 70%;
+    }
+}

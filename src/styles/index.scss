@@ -6,6 +6,13 @@
 
 
 //components
-@forward "./components/app";
 @forward "./components/header";
-@forward "./components/body";
+@forward "./components/gridGif";
+@forward "./components/listSearch";
+
+//layout
+@forward "./layout/body";
+@forward "./layout/app";
+@forward "./layout/aside";
+@forward "./layout/main";
+

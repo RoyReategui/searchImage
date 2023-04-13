@@ -23,7 +23,7 @@ export const useList = () => {
 
   const addBusqueda = (search: string) => {
     formatWords(search)
-    const updateList = [formatWords(search), ...busquedas].slice(0, 9)
+    const updateList = [formatWords(search), ...busquedas].slice(0, 10)
     setBusquedas(updateList)
   }
   return { addBusqueda, busquedas }

@@ -1,4 +1,5 @@
 import { type ChangeEvent } from 'react'
+import { type GifData } from './IGifResponse'
 
 export interface initialFormState {
   search: string
@@ -11,16 +12,28 @@ export interface IContext {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void
   onSearch: (event: paramSearch) => void
   busquedas: string []
-  gifs: IMock[]
+  gifs: IGifs[]
   isLoading: boolean
 }
-
-export interface IMock {
+export interface IGifs {
   title: string
-  text: string
+  listGifs?: ICardInfo[]
+}
+
+export interface ICardInfo {
+  title: string
+  img_url: string
+  img_urlModal: string
+  id: string
 }
 
 export interface IverifySearch {
   ok: boolean
   message: string
+}
+
+export interface IGifState {
+  data: GifData[]
+  isLoading: boolean
+  error: boolean
 }
